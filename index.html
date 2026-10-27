@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLC Results 2026</title>
+<meta name="description" content="Live media-sourced results for the October 2026 Legislative Council elections in Uttar Pradesh, Bihar, Maharashtra and Karnataka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf9f5;--panel:#fff;--fg:#1f1e1d;--muted:#6b6862;--line:#e6e3da;--grid:#ecebe6;--ok:#2e7d4f;--warn:#b26a00;--bad:#c0392b;--r:10px}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1b19;--panel:#262523;--fg:#ecebe6;--muted:#a19e96;--line:#3a3935;--grid:#34332f;--ok:#5fbf86;--warn:#e0a03a;--bad:#e5675a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.45}
+.wrap{max-width:1200px;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column;gap:24px}
+h1{font-family:"Source Serif 4",Georgia,serif;font-weight:400;font-size:clamp(1.5rem,4vw,2.1rem);margin:0;line-height:1.2}
+h2{font-size:1.05rem;font-weight:500;margin:0 0 6px}
+h3{font-size:.95rem;font-weight:500;margin:0}
+.take{margin:6px 0 0;color:var(--muted)}
+.cap,.sub{font-size:.8rem;color:var(--muted)}
+.note{font-size:.8rem;color:var(--muted);margin:0 0 12px}
+.tabs,.view{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button,.view button{font:inherit;font-size:.8rem;padding:4px 12px;border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:999px;cursor:pointer}
+.tabs button[aria-pressed=true],.view button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.view{margin-bottom:12px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:12px}
+.card,.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.kpi .v{font-family:"Source Serif 4",Georgia,serif;font-size:2rem;font-variant-numeric:tabular-nums;margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:12px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:12px}
+.row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.pill{font-size:.75rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);white-space:nowrap;color:var(--muted)}
+.pill[data-st=Declared]{color:var(--ok);border-color:currentColor}
+.pill[data-st=Leading]{color:var(--warn);border-color:currentColor}
+.lead{margin:8px 0;font-size:.85rem}
+ol.cands{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+ol.cands li{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:.82rem}
+.nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pt{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.bar{grid-column:1/-1;height:6px;border-radius:3px;background:var(--grid);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px}
+.foot{margin-top:12px;padding-top:8px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted);display:flex;flex-direction:column;gap:2px}
+.foot a{color:inherit}
+.stat{display:flex;gap:16px;margin-top:8px;font-size:.8rem;font-variant-numeric:tabular-nums}
+.stat b{font-family:"Source Serif 4",Georgia,serif;font-weight:400;font-size:1.3rem;display:block}
+.tally{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:.78rem;padding:2px 8px;border-radius:6px;background:var(--bg);border:1px solid var(--line);font-variant-numeric:tabular-nums}
+.chip b{font-weight:600}
+.tbl{max-height:36rem;overflow:auto;padding:0}
+table{width:100%;border-collapse:collapse;font-size:.8rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{position:sticky;top:0;background:var(--panel);font-weight:500}
+.err{color:var(--bad);font-size:.85rem}
+footer{font-size:.75rem;color:var(--muted)}
+@media (max-width:640px){.hide-n{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>MLC results 2026: UP, Bihar, Maharashtra, Karnataka</h1>
+    <p class="take" id="take">Loading…</p>
+    <div class="cap" id="asof"></div>
+  </header>
+  <nav class="tabs" id="tabs" aria-label="State"></nav>
+  <section class="kpis">
+    <div class="kpi"><div class="cap">Seats</div><div class="v" id="k-seats">—</div></div>
+    <div class="kpi"><div class="cap">Declared</div><div class="v" id="k-declared">—</div></div>
+    <div class="kpi"><div class="cap">Trends in (leading)</div><div class="v" id="k-leading">—</div></div>
+    <div class="kpi"><div class="cap">Awaiting trends</div><div class="v" id="k-counting">—</div></div>
+  </section>
+  <section>
+    <h2>State-wise</h2>
+    <p class="note">Seats won and leads by party. Leads are first-preference trends reported by the media and can change once lower preferences are transferred.</p>
+    <div class="sgrid" id="states"></div>
+  </section>
+  <section>
+    <h2>Seat-wise</h2>
+    <p class="note">Top 5 candidates per seat by votes reported so far. Vote share is of valid votes counted, where the media report gives it.</p>
+    <div class="view" role="group" aria-label="View">
+      <button type="button" data-v="cards" aria-pressed="true">Cards</button>
+      <button type="button" data-v="table" aria-pressed="false">Table</button>
+    </div>
+    <div class="grid" id="cards"></div>
+    <div class="card tbl" id="table" hidden>
+      <table><thead><tr><th>State</th><th>Seat</th><th>Status</th><th>Leading / won</th><th>Party</th><th>Margin</th><th class="hide-n">Stage of count</th><th class="hide-n">Turnout</th><th class="hide-n">Updated</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+  <footer>Compiled hourly from news media reports (there is no single official results portal). Each seat links to the report its figures come from. Figures are unofficial until declared by the Returning Officer.</footer>
+</div>
+<script>
+const STATES=['Uttar Pradesh','Bihar','Maharashtra','Karnataka'];
+const PARTY={BJP:'#E8822A',INC:'#2F7FD1',SP:'#D2463C',RJD:'#2E9E58','JD(U)':'#3E8E7E','JD(S)':'#4CAF50','Jan Suraaj':'#C9A227','Shiv Sena':'#E0662C','SS(UBT)':'#B5532A','NCP(SP)':'#5B7FBF',NCP:'#2D6FB0',BSP:'#3F51B5',Independent:'#8A8A8A',IND:'#8A8A8A'};
+const FALL=['#7a6fd0','#c25a9a','#4a9db5','#9a8a3a','#5a8a5a','#b5754a'];
+const pcol=(p,i)=>PARTY[p]||FALL[i%FALL.length];
+const nf=new Intl.NumberFormat('en-IN');
+const fmt=v=>nf.format(v);
+const pct=v=>(v*100).toFixed(1)+'%';
+const num=v=>v==null||v===''?null:Number(v);
+const tfmt=s=>{const d=new Date(s);return isNaN(d)?'':d.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'short',hour:'numeric',minute:'2-digit'})+' IST'};
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+let SEATS=[],CANDS=[],state=(location.hash.slice(1)&&decodeURIComponent(location.hash.slice(1)))||'All',view='cards';
+if(!['All',...STATES].includes(state))state='All';
+
+const tabs=document.getElementById('tabs');
+['All',...STATES].forEach(s=>{const b=el('button',null,s);b.type='button';b.dataset.s=s;b.onclick=()=>{state=s;history.replaceState(null,'',s==='All'?location.pathname:'#'+encodeURIComponent(s));render()};tabs.append(b)});
+document.querySelectorAll('.view button').forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll('.view button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.getElementById('cards').hidden=view!=='cards';document.getElementById('table').hidden=view!=='table'});
+
+function summary(rows,name){return{state:name,seats:rows.length,declared:rows.filter(r=>r.status==='Declared').length,leading:rows.filter(r=>r.status==='Leading').length,counting:rows.filter(r=>r.status!=='Declared'&&r.status!=='Leading').length}}
+function tally(rows){const m=new Map();for(const r of rows){if(!r.leader_party||(r.status!=='Declared'&&r.status!=='Leading'))continue;const o=m.get(r.leader_party)||{party:r.leader_party,won:0,leading:0};r.status==='Declared'?o.won++:o.leading++;m.set(r.leader_party,o)}return[...m.values()].sort((a,b)=>(b.won+b.leading)-(a.won+a.leading))}
+function top5(id){const cs=CANDS.filter(c=>c.seat_id===id).map(c=>({...c,votes:num(c.votes),share:num(c.share)}));cs.sort((a,b)=>(b.votes??-1)-(a.votes??-1)||(a.position??99)-(b.position??99));return cs.slice(0,5)}
+
+function render(){
+  tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.s===state)));
+  const rows=state==='All'?SEATS:SEATS.filter(r=>r.state===state);
+  const s=summary(rows,state),t=tally(rows);
+  for(const k of['seats','declared','leading','counting'])document.getElementById('k-'+k).textContent=fmt(s[k]);
+  document.getElementById('take').textContent=s.declared+s.leading===0
+    ?`Counting under way on all ${s.seats} seats${state==='All'?' across four states':' in '+state}; no first-preference trends reported yet.`
+    :`${s.declared} of ${s.seats} declared, ${s.leading} more with trends. `+t.slice(0,3).map(x=>`${x.party} ${[x.won?x.won+' won':'',x.leading?x.leading+' ahead':''].filter(Boolean).join(', ')}`).join('; ')+'.';
+  const latest=SEATS.reduce((m,r)=>{const d=new Date(r.updated);return d>m?d:m},new Date(0));
+  document.getElementById('asof').textContent=latest.getTime()?'Last updated '+tfmt(latest)+' · refreshed hourly from media reports':'';
+
+  const sc=document.getElementById('states');sc.replaceChildren();
+  (state==='All'?STATES:[state]).forEach(st=>{
+    const r=SEATS.filter(x=>x.state===st);if(!r.length)return;const sm=summary(r,st),tl=tally(r);
+    const card=el('div','card');const h=el('div','row');h.append(el('h3',null,st),el('span','sub',sm.seats+' seats'));
+    const stat=el('div','stat');[['declared','Declared'],['leading','Leading'],['counting','Awaiting']].forEach(([f,l])=>{const sp=el('span');sp.append(el('b',null,fmt(sm[f])),document.createTextNode(l));stat.append(sp)});
+    const ta=el('div','tally');tl.forEach((x,i)=>{const c=el('span','chip');c.style.borderLeft='4px solid '+pcol(x.party,i);c.append(el('b',null,x.party+' '),document.createTextNode(`${x.won} won · ${x.leading} ahead`));ta.append(c)});
+    if(!tl.length)ta.append(el('span','sub','No party has a reported lead yet'));
+    card.append(h,stat,ta);sc.append(card)});
+
+  const cards=document.getElementById('cards');cards.replaceChildren();
+  rows.forEach(s=>{
+    const card=el('article','card');card.id='seat-'+s.seat_id;
+    const h=el('div','row');const t=el('div');t.append(el('h3',null,s.seat),el('div','sub',s.state));
+    const p=el('span','pill',s.status);p.dataset.st=s.status;h.append(t,p);
+    const lead=el('div','lead');
+    if(s.leader){lead.append(document.createTextNode(s.status==='Declared'?'Won: ':'Ahead: '),el('b',null,s.leader),document.createTextNode(s.leader_party?' ('+s.leader_party+')':''));if(num(s.margin)!=null)lead.append(document.createTextNode(' · margin '+fmt(num(s.margin))))}else lead.textContent='No trend reported yet';
+    const list=el('ol','cands');const cs=top5(s.seat_id);const anyV=cs.some(c=>c.votes!=null);
+    const mS=Math.max(0,...cs.map(c=>c.share||0)),mV=Math.max(0,...cs.map(c=>c.votes||0));
+    cs.forEach((c,i)=>{const li=el('li');const nm=el('span','nm');nm.append(el('span',null,(i+1)+'. '+c.candidate),el('span','pt',' · '+c.party));
+      const n=el('span','num',[c.share!=null?pct(c.share):null,c.votes!=null?fmt(c.votes):null].filter(Boolean).join(' · ')||'—');
+      const bar=el('div','bar');const f=el('i');const w=c.share!=null&&mS?c.share/Math.max(mS,.5):(c.votes!=null&&mV?c.votes/mV:0);f.style.width=(w*100).toFixed(1)+'%';f.style.background=pcol(c.party,i);bar.append(f);
+      li.append(nm,n,bar);list.append(li)});
+    const ft=el('div','foot');
+    if(!anyV)ft.append(el('span',null,cs.length?'Main contenders shown; awaiting first-preference counts':'Candidates will appear as counts are reported'));
+    if(s.stage)ft.append(el('span',null,s.stage));
+    const meta=[];if(num(s.turnout)!=null)meta.push('Turnout '+pct(num(s.turnout)));if(s.in_fray)meta.push(s.in_fray+' in fray');if(num(s.valid_votes))meta.push(fmt(num(s.valid_votes))+' valid votes');if(meta.length)ft.append(el('span',null,meta.join(' · ')));
+    const src=el('span',null,'Updated '+tfmt(s.updated)+' · ');if(s.source_url){const a=el('a',null,s.source_name||'source');a.href=s.source_url;a.target='_blank';a.rel='noopener';src.append(a)}else src.append(document.createTextNode(s.source_name||''));ft.append(src);
+    card.append(h,lead,list,ft);cards.append(card)});
+
+  const tb=document.querySelector('#table tbody');tb.replaceChildren();
+  rows.forEach(s=>{const tr=el('tr');[s.state,s.seat,s.status,s.leader||'—',s.leader_party||'—',num(s.margin)!=null?fmt(num(s.margin)):'—',s.stage||'',num(s.turnout)!=null?pct(num(s.turnout)):'—',tfmt(s.updated)].forEach((v,i)=>tr.append(el('td',i>=6?'hide-n':null,v)));tb.append(tr)});
+}
+
+async function load(){
+  try{
+    const q='?t='+Date.now();
+    const [a,b]=await Promise.all([fetch('data/seats.json'+q,{cache:'no-store'}),fetch('data/candidates.json'+q,{cache:'no-store'})]);
+    if(!a.ok||!b.ok)throw new Error('HTTP '+a.status+'/'+b.status);
+    const rows=j=>Array.isArray(j)?j:(j.rows||j.data||[]);
+    SEATS=rows(await a.json());CANDS=rows(await b.json());render();
+  }catch(e){const t=document.getElementById('take');t.textContent='Could not load the latest data. Please refresh in a minute.';t.className='take err'}
+}
+load();setInterval(load,10*60*1000);
+</script>
+</body>
+</html>

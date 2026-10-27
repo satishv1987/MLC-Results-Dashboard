@@ -1,0 +1,328 @@
+{
+ "rows": [
+  {
+   "cand_id": "UP-LKO-G|Awanish Kumar Singh",
+   "seat_id": "UP-LKO-G",
+   "candidate": "Awanish Kumar Singh",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "UP-GKF-T|Sanjay Tripathi",
+   "seat_id": "UP-GKF-T",
+   "candidate": "Sanjay Tripathi",
+   "party": "SP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-PAT-G|Neeraj Kumar",
+   "seat_id": "BR-PAT-G",
+   "candidate": "Neeraj Kumar",
+   "party": "JD(U)",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-PAT-G|Anuj Singh",
+   "seat_id": "BR-PAT-G",
+   "candidate": "Anuj Singh",
+   "party": "Jan Suraaj",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-PAT-G|Dilip Kumar",
+   "seat_id": "BR-PAT-G",
+   "candidate": "Dilip Kumar",
+   "party": "RJD",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-DBG-G|Sarvesh Kumar",
+   "seat_id": "BR-DBG-G",
+   "candidate": "Sarvesh Kumar",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-DBG-G|Anil Kumar Jha",
+   "seat_id": "BR-DBG-G",
+   "candidate": "Anil Kumar Jha",
+   "party": "RJD",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-DBG-G|Ravindra Yadav",
+   "seat_id": "BR-DBG-G",
+   "candidate": "Ravindra Yadav",
+   "party": "Jan Suraaj",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-TIR-G|Rashmi Vinayak Gautam",
+   "seat_id": "BR-TIR-G",
+   "candidate": "Rashmi Vinayak Gautam",
+   "party": "RJD",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-KOS-G|N K Yadav",
+   "seat_id": "BR-KOS-G",
+   "candidate": "N K Yadav",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-KOS-G|Nitesh Kumar",
+   "seat_id": "BR-KOS-G",
+   "candidate": "Nitesh Kumar",
+   "party": "RJD",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-KOS-G|Rajnish Ranjan",
+   "seat_id": "BR-KOS-G",
+   "candidate": "Rajnish Ranjan",
+   "party": "Jan Suraaj",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-PAT-T|Naval Kishore Yadav",
+   "seat_id": "BR-PAT-T",
+   "candidate": "Naval Kishore Yadav",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-PAT-T|Sanjeev Kumar Singh",
+   "seat_id": "BR-PAT-T",
+   "candidate": "Sanjeev Kumar Singh",
+   "party": "RJD",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-PAT-T|Divya Jyoti",
+   "seat_id": "BR-PAT-T",
+   "candidate": "Divya Jyoti",
+   "party": "Jan Suraaj",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-DBG-T|Madan Mohan Jha",
+   "seat_id": "BR-DBG-T",
+   "candidate": "Madan Mohan Jha",
+   "party": "INC",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-DBG-T|S P Rai",
+   "seat_id": "BR-DBG-T",
+   "candidate": "S P Rai",
+   "party": "Jan Suraaj",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-TIR-T|Narendra Prasad Singh",
+   "seat_id": "BR-TIR-T",
+   "candidate": "Narendra Prasad Singh",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-SAR-T|Jayram Yadav",
+   "seat_id": "BR-SAR-T",
+   "candidate": "Jayram Yadav",
+   "party": "RJD",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "BR-SAR-T|Afaq Ahmed",
+   "seat_id": "BR-SAR-T",
+   "candidate": "Afaq Ahmed",
+   "party": "Jan Suraaj",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "MH-PUN-G|Smita Jadhav",
+   "seat_id": "MH-PUN-G",
+   "candidate": "Smita Jadhav",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "MH-PUN-G|Harshada Deshmukh-Jadhav",
+   "seat_id": "MH-PUN-G",
+   "candidate": "Harshada Deshmukh-Jadhav",
+   "party": "NCP(SP)",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "MH-PUN-G|Sunil Modi",
+   "seat_id": "MH-PUN-G",
+   "candidate": "Sunil Modi",
+   "party": "SS(UBT)",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "MH-NGP-G|Sudhakar Kohale",
+   "seat_id": "MH-NGP-G",
+   "candidate": "Sudhakar Kohale",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "MH-NGP-G|Abhijit Wanjari",
+   "seat_id": "MH-NGP-G",
+   "candidate": "Abhijit Wanjari",
+   "party": "INC",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "MH-PUN-T|Kaustubh Gawade",
+   "seat_id": "MH-PUN-T",
+   "candidate": "Kaustubh Gawade",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "MH-AMR-T|Kiran Sarnaik",
+   "seat_id": "MH-AMR-T",
+   "candidate": "Kiran Sarnaik",
+   "party": "Shiv Sena",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "MH-AMR-T|Aditi Pohare",
+   "seat_id": "MH-AMR-T",
+   "candidate": "Aditi Pohare",
+   "party": "INC",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "KA-SE-G|Shashi Hulikunte Mutt",
+   "seat_id": "KA-SE-G",
+   "candidate": "Shashi Hulikunte Mutt",
+   "party": "INC",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "KA-SE-G|K M Suresh",
+   "seat_id": "KA-SE-G",
+   "candidate": "K M Suresh",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "KA-W-G|S V Sankanur",
+   "seat_id": "KA-W-G",
+   "candidate": "S V Sankanur",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "KA-W-G|Mohan Limbikai",
+   "seat_id": "KA-W-G",
+   "candidate": "Mohan Limbikai",
+   "party": "INC",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "KA-NE-T|Shashil G Namoshi",
+   "seat_id": "KA-NE-T",
+   "candidate": "Shashil G Namoshi",
+   "party": "BJP",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "KA-NE-T|Sharanappa Mattur",
+   "seat_id": "KA-NE-T",
+   "candidate": "Sharanappa Mattur",
+   "party": "INC",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "KA-BLR-T|Puttanna",
+   "seat_id": "KA-BLR-T",
+   "candidate": "Puttanna",
+   "party": "INC",
+   "votes": null,
+   "share": null,
+   "position": null
+  },
+  {
+   "cand_id": "KA-BLR-T|A P Ranganath",
+   "seat_id": "KA-BLR-T",
+   "candidate": "A P Ranganath",
+   "party": "JD(S)",
+   "votes": null,
+   "share": null,
+   "position": null
+  }
+ ]
+}
