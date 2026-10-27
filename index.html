@@ -51,6 +51,9 @@ ol.cands li{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:.8
 table{width:100%;border-collapse:collapse;font-size:.8rem;font-variant-numeric:tabular-nums}
 th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 th{position:sticky;top:0;background:var(--panel);font-weight:500}
+.hrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:6px}
+.rbtn{font:inherit;font-size:.8rem;padding:4px 12px;border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:999px;cursor:pointer}
+.rbtn:disabled{opacity:.6;cursor:default}
 .err{color:var(--bad);font-size:.85rem}
 footer{font-size:.75rem;color:var(--muted)}
 @media (max-width:640px){.hide-n{display:none}}
@@ -61,7 +64,7 @@ footer{font-size:.75rem;color:var(--muted)}
   <header>
     <h1>MLC results 2026: UP, Bihar, Maharashtra, Karnataka</h1>
     <p class="take" id="take">Loading…</p>
-    <div class="cap" id="asof"></div>
+    <div class="hrow"><div class="cap" id="asof"></div><button type="button" id="refresh" class="rbtn">Refresh</button></div>
   </header>
   <nav class="tabs" id="tabs" aria-label="State"></nav>
   <section class="kpis">
@@ -155,15 +158,21 @@ function render(){
   rows.forEach(s=>{const tr=el('tr');[s.state,s.seat,s.status,s.leader||'—',s.leader_party||'—',num(s.margin)!=null?fmt(num(s.margin)):'—',s.stage||'',num(s.turnout)!=null?pct(num(s.turnout)):'—',tfmt(s.updated)].forEach((v,i)=>tr.append(el('td',i>=6?'hide-n':null,v)));tb.append(tr)});
 }
 
-async function load(){
+const rb=document.getElementById('refresh');
+async function load(manual){
+  if(manual){rb.disabled=true;rb.textContent='Refreshing…'}
   try{
     const q='?t='+Date.now();
     const [a,b]=await Promise.all([fetch('data/seats.json'+q,{cache:'no-store'}),fetch('data/candidates.json'+q,{cache:'no-store'})]);
     if(!a.ok||!b.ok)throw new Error('HTTP '+a.status+'/'+b.status);
     const rows=j=>Array.isArray(j)?j:(j.rows||j.data||[]);
     SEATS=rows(await a.json());CANDS=rows(await b.json());render();
-  }catch(e){const t=document.getElementById('take');t.textContent='Could not load the latest data. Please refresh in a minute.';t.className='take err'}
+    const t=document.getElementById('take');t.className='take';
+    if(manual)rb.textContent='Up to date · checked '+new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'numeric',minute:'2-digit'});
+  }catch(e){if(manual)rb.textContent='Refresh';const t=document.getElementById('take');t.textContent='Could not load the latest data. Please refresh in a minute.';t.className='take err'}
+  finally{if(manual){rb.disabled=false;setTimeout(()=>{rb.textContent='Refresh'},8000)}}
 }
+rb.onclick=()=>load(true);
 load();setInterval(load,10*60*1000);
 </script>
 </body>
